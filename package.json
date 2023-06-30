@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-eleventy-img": "^0.10.0"
+  }
+}
