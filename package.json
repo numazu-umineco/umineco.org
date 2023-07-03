@@ -1,11 +1,30 @@
 {
   "scripts": {
-    "start": "eleventy",
-    "dev": "eleventy --serve"
+    "start": "run-p serve:eleventy watch:parcel",
+    "serve:eleventy": "eleventy --serve",
+    "watch:parcel": "run-p watch:css watch:js watch:images",
+    "watch:css": "parcel watch ./src/scss/style.scss --dist-dir ./_site/css",
+    "watch:js": "parcel watch ./src/js/main.js --dist-dir ./_site/js",
+    "watch:images": "parcel watch ./src/img/*",
+    "build": "run-s clean build:parcel build:eleventy",
+    "build:eleventy": "eleventy",
+    "build:parcel": "run-p build:css build:js build:images",
+    "build:css": "parcel build ./src/scss/style.scss --dist-dir ./_site/css",
+    "build:js": "parcel build ./src/js/main.js --dist-dir ./_site/js",
+    "build:images": "parcel build src/assets/img/*",
+    "clean": "rm -rf _site"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
+    "@parcel/transformer-sass": "^2.9.3",
+    "bootstrap": "^5.3.0",
+    "cssnano": "^6.0.1",
+    "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
-    "markdown-it-eleventy-img": "^0.10.0"
+    "markdown-it-eleventy-img": "^0.10.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.9.3",
+    "postcss": "^8.4.24",
+    "sass": "^1.63.6"
   }
 }
