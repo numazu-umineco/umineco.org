@@ -1,1 +1,131 @@
-// @import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+.btn-discord-brand {
+  @include button-variant(#5865f2, #5865f2);
+}
+
+body {
+}
+
+.jumbotron {
+  // background: linear-gradient(130deg, #55c9ff, #00e9dd);
+  background-color: #22c4fa;
+  background-image: url('../img/bg.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 750px;
+}
+
+.jumbotron-title {
+  color: #fff;
+}
+
+.umineco {
+  position: relative;
+  background: linear-gradient(130deg, #55c9ff, #00e9dd);
+  overflow: hidden;
+  border-radius: 100%;
+  max-width: 80%;
+  transition: border-radius 0.3s ease-in-out;
+}
+
+.umineco::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 100%;
+}
+
+.umineco::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -7%;
+  left: 10%;
+  width: 100%;
+  height: 95%;
+  margin: auto;
+  background-image: url('../img/umineco.svg');
+  background-size: cover;
+  transition: left 0.3s 0.1s ease-in-out;
+}
+
+.umineco:hover {
+  border-radius: 25%;
+}
+
+.umineco:hover::after {
+  left: 7%;
+}
+
+.umineco-border {
+  border: #fff solid 10px;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section:nth-child(odd) {
+  background-color: #f1feff;
+}
+
+.section-title {
+  margin-bottom: 3rem;
+}
+.section-title > span {
+  display: inline-block;
+}
+
+.role-header h3 {
+  text-align: center;
+}
+
+.role-icon {
+  width: 200px;
+  height: 200px;
+  margin: 2rem auto;
+  background: linear-gradient(130deg, #55c9ff, #00e9dd);
+  border-radius: 100%;
+  padding: 30px;
+}
+
+.invite-widget {
+  background: #313338;
+}
+
+.invite-active-member::before {
+  content: '';
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-right: 0.2rem;
+  border-radius: 100%;
+  animation: active-color-animation 3s ease-in-out infinite;
+}
+
+@keyframes active-color-animation {
+  0% {
+    background-color: #43b581;
+  }
+  50% {
+    background-color: #5ee0a6;
+  }
+  100% {
+    background-color: #43b581;
+  }
+}
+
+footer {
+  padding: 4rem;
+  font-size: 0.9rem;
+  background-color: #4b524e;
+  color: #fff;
+}
