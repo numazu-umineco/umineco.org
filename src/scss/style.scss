@@ -1,4 +1,13 @@
-// @import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+.btn-discord-brand {
+  @include button-variant(#5865f2, #5865f2);
+}
 
 body {
 }
@@ -10,7 +19,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: 700px;
+  min-height: 750px;
 }
 
 .jumbotron-title {
@@ -92,7 +101,31 @@ body {
   background: #313338;
 }
 
-.invite-btn {
-  background-color: #5865f2;
-  border-color: #4f5df7;
+.invite-active-member::before {
+  content: '';
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-right: 0.2rem;
+  border-radius: 100%;
+  animation: active-color-animation 3s ease-in-out infinite;
+}
+
+@keyframes active-color-animation {
+  0% {
+    background-color: #43b581;
+  }
+  50% {
+    background-color: #5ee0a6;
+  }
+  100% {
+    background-color: #43b581;
+  }
+}
+
+footer {
+  padding: 4rem;
+  font-size: 0.9rem;
+  background-color: #4b524e;
+  color: #fff;
 }
