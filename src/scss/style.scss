@@ -12,6 +12,15 @@
 body {
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.header {
+  background-color: #22c4fa;
+  color: #fff;
+}
+
 .jumbotron {
   // background: linear-gradient(130deg, #55c9ff, #00e9dd);
   background-color: #22c4fa;
@@ -73,6 +82,10 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+}
+
+.member-count-loader {
+  position: relative;
 }
 
 .member-count-loader > .member-count-loader-dummy {
