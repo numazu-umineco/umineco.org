@@ -26,6 +26,72 @@ body {
   color: #fff;
 }
 
+.jumbotron-active-member {
+  display: inline-block;
+  position: relative;
+  background-color: #fff;
+  border-radius: 20rem;
+}
+
+.jumbotron-active-member::before {
+  content: '';
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.2rem;
+  border-radius: 100%;
+  animation: active-color-animation 3s ease-in-out infinite;
+  border: 1px solid #fff;
+}
+
+.jumbotron-active-member::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  width: 11px;
+  height: 11px;
+  margin: 0 auto;
+  rotate: 45deg;
+}
+
+.jumbotron-join-button {
+  display: inline-flex;
+  align-items: center;
+}
+
+.jumbotron-join-button::before {
+  content: '';
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  margin-right: 0.3em;
+  background-image: url('../img/discord-mark-white.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.member-count-loader > .member-count-loader-dummy {
+  opacity: 0.2;
+}
+
+.member-count-loader-dummy::before {
+  content: 'ただいま-人が参加中'
+}
+
+.member-count-loader > .spinner-border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
 .umineco {
   position: relative;
   background: linear-gradient(130deg, #55c9ff, #00e9dd);

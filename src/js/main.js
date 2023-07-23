@@ -8,7 +8,9 @@ window.addEventListener('load', async () => {
     console.log(response.data);
     const memberCount = response.data.approximate_member_count;
     document.querySelectorAll('.member-count').forEach((element) => {
-      element.textContent = memberCount;
+      element.textContent = `ただいま${memberCount}人が参加中`;
+      const loader = element.parentElement.querySelector('.member-count-loader');
+      if (loader) loader.classList.add('d-none');
     });
   } catch (err) {
     console.error(err);
