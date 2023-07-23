@@ -1,8 +1,11 @@
 const htmlmin = require('html-minifier');
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 function eleventyConfig(config) {
   config.addPassthroughCopy("src/img");
   config.addPassthroughCopy("src/css");
+
+  config.addPlugin(EleventyHtmlBasePlugin);
 
   var htmlMinify = function (value, outputPath) {
     if (outputPath && outputPath.indexOf('.html') > -1) {
@@ -21,8 +24,8 @@ function eleventyConfig(config) {
     dir: {
       input: "src",
       output: "_site",
-      includes: "includes",
-      data: "data",
+      includes: "_includes",
+      data: "_data",
     },
     templateFormats: ["html", "njk", "md", "11ty.js"],
     htmlTemplateEngine: "njk",
