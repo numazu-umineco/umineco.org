@@ -1,5 +1,5 @@
 ---
-titie: うみねこ コミュニティポリシー
+title: うみねこ コミュニティポリシー
 layout: layouts/page.njk
 narrow: true
 ---
