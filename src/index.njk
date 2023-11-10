@@ -98,32 +98,7 @@ layout: layouts/base.njk
       </div>
       <div class="row justify-content-center">
         <div class="col-xl-5 col-xxl-4 col-lg-6 my-4">
-          <div class="card shadow invite-widget p-3 text-light">
-            <div class="card-header">
-              <a href="https://discord.com/"><img src="/img/discord-logo-white.svg" alt="Discord" style="max-height: 1.5rem;"></a>
-            </div>
-            <div class="card-body text-center">
-              <div class="umineco mx-auto mb-4 shadow-sm" style="width: 120px"></div>
-              <h5 class="card-title fw-bold mb-3">沼津移住民 うみねこ</h5>
-              <div class="invite-active-member d-inline-flex align-items-center mb-3">
-                <span class="online me-2"></span>
-                <span class="member-count">
-                  <span class="member-count-loader">
-                    <span class="member-count-loader-dummy"></span>
-                    <span class="spinner-border spinner-border-sm text-primary" role="status">
-                      <span class="visually-hidden">Loading...</span>
-                    </span>
-                  </span>
-                </span>
-              </div>
-              <div class="d-grid mb-2">
-                <a href="https://discord.com/invite/8taubbJ5qD" class="btn btn-lg btn-discord-brand">Discord の招待リンクを開く</a>
-              </div>
-              <div class="text-secondary small">
-                Discord の招待ページにジャンプします
-              </div>
-            </div>
-          </div>
+          {% include "discord.njk" %}
         </div>
       </div>
 

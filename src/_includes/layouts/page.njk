@@ -7,15 +7,15 @@ layout: layouts/base.njk
     <div class="container justify-content-center">
       <a class="navbar-brand d-inline-flex align-items-center me-0" href="/">
         <img src="/img/umineco.svg" alt="Logo" width="50" class="d-inline-block align-text-top me-2">
-        <span class="d-inline-block">umineco.org<span>
+        <span class="d-inline-block">沼津移住者コミュニティ umineco<span>
       </a>
     </div>
   </nav>
 </header>
 
-<div class="container py-lg-5">
+<div class="container pt-lg-3 mb-lg-5">
   <div class="row justify-content-center">
-    <div class="{{ 'col-lg-9' if narrow else 'col' }}">
+    <div class="{{ 'col-lg-9' if narrow else 'col' }} content">
       {{ content | safe }}
     </div>
   </div>
