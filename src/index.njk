@@ -5,7 +5,7 @@ layout: layouts/base.njk
   <div class="jumbotron d-flex align-items-center flex-column">
     <div class="my-auto d-flex align-items-center flex-column">
       <h1 class="jumbotron-title d-flex align-items-center flex-column mb-5">
-        <span class="fw-bold small">沼津移住者ゆるコミュニティ</span>
+        <span class="fw-bold small">沼津移住者コミュニティ</span>
         <span class="display-2 fw-bold">umineco</span>
       </h1>
       <div class="umineco umineco-border mb-5" style="width: 250px"></div>
@@ -23,7 +23,7 @@ layout: layouts/base.njk
         </div>
       </div>
       <div>
-        <a href="https://discord.com/invite/8taubbJ5qD" class="btn btn-discord-brand jumbotron-join-button btn-lg py-3 px-5 shadow">
+        <a href="{{ discord.invitationLink }}" class="btn btn-discord-brand discord-join-button btn-lg py-3 px-5 shadow">
           Discord に参加する
         </a>
       </div>
@@ -36,10 +36,10 @@ layout: layouts/base.njk
         <div class="col-12">
           <div class="section-header text-center mb-5">
             <h2 class="section-title fw-bold mb-3">
-              <span>沼津移住者ゆるコミュニティ</span>
+              <span>沼津移住者コミュニティ</span>
               <span><ruby>umineco<rp>(</rp><rt>うみねこ</rt><rp>)</rp></ruby> へようこそ</span>
             </h2>
-            <p class="lead">"umineco" は、沼津のことをもっと知りたい移住者のための Discord コミュニティです</p>
+            <p class="lead">うみねこは、沼津のことをもっと知りたい移住者のための Discord コミュニティです</p>
             <p></p>
           </div>
         </div>
@@ -106,7 +106,7 @@ layout: layouts/base.njk
         <div class="col-lg-7">
           <ul class="small text-secondary">
             <li>
-              参加には Discord アカウントの登録(無料)が必要です。利用の際は <a href="https://discord.com/terms">Discord の利用規約</a> を遵守してください。
+              参加には Discord アカウントの登録(無料)が必要です。利用の際は <a href="{{ discord.termLink }}">Discord の利用規約</a> を遵守してください。
             </li>
             <li>
               健全なコミュニティ運営のために、<a href="/policies/">独自のコミュニティポリシー</a>を制定しています。あらかじめ内容をご確認の上、参加をお願いします。
