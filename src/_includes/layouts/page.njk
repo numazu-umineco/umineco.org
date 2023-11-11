@@ -2,21 +2,14 @@
 layout: layouts/base.njk
 ---
 
-<header class="mb-3">
-  <nav class="navbar navbar-expand-lg header py-3" data-bs-theme="dark">
-    <div class="container justify-content-center">
-      <a class="navbar-brand d-inline-flex align-items-center me-0" href="/">
-        <img src="/img/umineco.svg" alt="Logo" width="50" class="d-inline-block align-text-top me-2">
-        <span class="d-inline-block">umineco.org<span>
-      </a>
-    </div>
-  </nav>
-</header>
+{% include 'header.njk' %}
 
-<div class="container py-lg-5">
+<div class="container my-5">
   <div class="row justify-content-center">
-    <div class="{{ 'col-lg-9' if narrow else 'col' }}">
+    <div class="{{ 'col-lg-9' if narrow else 'col' }} content">
       {{ content | safe }}
     </div>
   </div>
 </div>
+
+{% include 'invitation.njk' %}
