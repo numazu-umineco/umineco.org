@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+---
+
+{% include 'header.njk' %}
+
+<div class="secondary-header py-5">
+  <div class="secondary-header-background">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">活動記録</div>
+          <h2>{{ title }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="{{ 'col-lg-9' if narrow else 'col' }} content">
+      {{ content | safe }}
+    </div>
+  </div>
+</div>
+
+{% include 'invitation.njk' %}
