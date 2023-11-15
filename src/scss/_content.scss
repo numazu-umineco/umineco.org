@@ -1,7 +1,34 @@
+.content-header {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+}
+
+.content-header-background {
+  width: 100%;
+  height: 100%;
+  padding: 8rem 0;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.content-header-subtitle {
+  > a {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
 .content {
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.6rem;
+  }
+
+  p + {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.5rem;
+    }
   }
 
   h1 {
@@ -22,5 +49,13 @@
 
   p {
     margin-bottom: 0.6rem;
+  }
+
+  picture {
+    display: block;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    max-width: 720px;
   }
 }

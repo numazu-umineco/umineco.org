@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.news
+  size: 10
+  reverse: true
+permalink: "/news/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}{% else %}index{% endif %}.html"
+eleventyComputed:
+  title: うみねこの活動記録 ({{ pagination.pageNumber + 1 }}ページ目)
+meta:
+  robots:
+    - noindex
+    - follow
+---
+
+
+{% include 'header.njk' %}
+
+<div class="container">
+  <div class="row">
+    <main class="col-12">
+      <header class="my-5 text-center">
+        <h2>
+          うみねこの活動記録
+        </h2>
+        <div>{{ pagination.pageNumber + 1 }}ページ目</div>
+      </header>
+
+      <div class="row g-3">
+        {%- for news in pagination.items %}
+        <div class="col-lg-6 col-12 news-item">
+          <a class="ratio ratio-3x2 overflow-hidden news-item-content" href="{{ news.url }}">
+            <div>
+              {%- if news.data.eyecatch %}
+              <img src="{% eyecatchImageUrl news.data.eyecatch, news.url %}" class="news-item-thumbnail" />
+              {%- else %}
+              <img src="{{ '/img/ogp.png' | url }}" class="news-item-thumbnail">
+              {%- endif %}
+              <div class="news-item-thumbnail-overlay">
+                <div class="news-item-header text-light p-3 pt-5">
+                  <div class="news-item-date mb-2">{{ news.data.date | dateString }}</div>
+                  <h4 class="news-item-title">{{ news.data.title | safe }}</h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {%- endfor %}
+      </div>
+    </main>
+  </div>
+
+  <div class="row justify-content-center my-5">
+    <div class="col-12 col-xl-9">
+      <nav area-label="Page navigation" class="d-flex justify-content-center">
+        <ol class="pagination">
+          {%- for pageEntry in pagination.pages %}
+          <li class="page-item">
+            {% if page.url == pagination.hrefs[ loop.index0 ] -%}
+            <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="page-link active" aria-label="Current page, page {{ loop.index }}" aria-current="page">
+              {{ loop.index }}
+            </a>
+            {%- else -%}
+            <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="page-link" aria-label="Goto page {{ loop.index }}">
+              {{ loop.index }}
+            </a>
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>

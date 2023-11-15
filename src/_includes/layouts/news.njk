@@ -4,23 +4,33 @@ layout: layouts/base.njk
 
 {% include 'header.njk' %}
 
-<div class="secondary-header py-5">
-  <div class="secondary-header-background">
+<div class="content-header text-light" style="background-image: url({% if eyecatch %}{% eyecatchImageUrl eyecatch %}{% else %}{{ '/img/ogp.png' | url }}{% endif %});">
+  <div class="content-header-background">
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="mb-3">活動記録</div>
-          <h2>{{ title }}</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <nav class="content-header-subtitle mb-3 d-flex">
+            <a href="{{ '/news/' | url }}" class="nav-link">うみねこの活動記録</a>
+            <span class="mx-2">/</span>
+            <date>{{ date | dateString }}</date>
+          </nav>
+          <h2 class="content-header-title">{{ title }}</h2>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container my-5">
+<div class="container my-4">
   <div class="row justify-content-center">
-    <div class="{{ 'col-lg-9' if narrow else 'col' }} content">
+    <div class="col-lg-9 content">
       {{ content | safe }}
+
+      <h3>本件に関する問い合わせ先</h3>
+      <p>
+        チームうみねこ (代表: 神崎) &lt;contact[at]umineco.org&gt;<br />
+        <small>※ 上記の <code>[at]</code> は <code>@</code> に変換してください
+      </p>
     </div>
   </div>
 </div>
