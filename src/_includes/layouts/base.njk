@@ -20,11 +20,17 @@
   <meta property="og:image" content="{{ '/img/ogp.png' | url | htmlBaseUrl(metadata.url)}}" />
   <meta property="og:description" content="{{ description or metadata.description }}" />
 
-  <meta name="twitter:card" content="summary_large_image">
+  {% if page.url === '/' %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ '/img/ogp.png' | url | htmlBaseUrl(metadata.url) }}" />
+  {% else %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="{{ '/img/umineco.png' | url | htmlBaseUrl(metadata.url) }}" />
+  {% endif %}
+
   <meta name="twitter:site" content="{{ metadata.author.twitter }}">
   <meta name="twitter:creator" content="{{ metadata.author.twitter }}">
   <meta name="twitter:title" content="{{ title or metadata.title }}" />
-  <meta name="twitter:image" content="{{ '/img/ogp.png' | url | htmlBaseUrl(metadata.url) }}" />
   <meta name="twitter:description" content="{{ description or metadata.description }}" />
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
