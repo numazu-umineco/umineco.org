@@ -30,6 +30,25 @@ layout: layouts/base.njk
     </div>
   </div>
 
+  <aside class="news-tikcer">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center py-2 mx-lg-5 small">
+        <div class="me-2 my-2 fw-bold">
+          活動報告
+        </div>
+        <div class="mx-lg-3 d-flex flex-wrap">
+          {%- for news in collections.news | reverse |  batch(1) | first %}
+            <div class="me-2">{{ news.data.date | dateString }}</div>
+            <a href="{{ news.url }}">{{ news.data.title }}</a>
+          {%- endfor %}
+        </div>
+        <div class="ms-auto my-2 my-lg-0">
+          <a href="#news">これまでの活動記録</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
   <div class="section about">
     <div class="container">
       <div class="row mb-4">
@@ -83,6 +102,62 @@ layout: layouts/base.njk
     </div>
   </div>
 
+  <div class="section" id="news">
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col">
+          <div class="section-header text-center">
+            <h2 class="fw-bold md-3">
+              <span>うみねこの</span><span>活動記録</span>
+            </h2>
+            <p class="lead">これまでうみねこが行ってきた活動の記録です</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid g-0">
+      <div class="row g-0">
+        {%- for news in collections.news | reverse |  batch(6) | first %}
+        <div class="col-xl-4 col-lg-6 col-12 news-item">
+          <a class="ratio ratio-3x2 overflow-hidden news-item-content" href="{{ news.url }}">
+            <div>
+              {%- if news.data.eyecatch %}
+              <img src="{% eyecatchImageUrl news.data.eyecatch, news.url %}" class="news-item-thumbnail" />
+              {%- else %}
+              <img src="{{ '/img/ogp.png' | url }}" class="news-item-thumbnail">
+              {%- endif %}
+              <div class="news-item-thumbnail-overlay">
+                <div class="news-item-header text-light p-3 pt-5">
+                  <div class="news-item-date mb-2">{{ news.data.date | dateString }}</div>
+                  <h4 class="news-item-title">{{ news.data.title | safe }}</h4>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {%- endfor %}
+      </div>
+      <div class="row g-0">
+        <div class="col">
+          <a class="d-block py-3 text-center news-read-more nav-link" href="{{ '/news/' | url }}">
+            活動記録をもっと見る
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col text-center">
+          <div class="d-inline-flex flex-column">
+            <span>うみねこでは今後も地域社会への貢献を目指し、</span><span>様々な活動を行っていく予定です。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="section invite" id="join">
     <div class="container">
       <div class="row">
@@ -124,7 +199,7 @@ layout: layouts/base.njk
           <dl>
             <dt>運営元</dt>
             <dd>
-              <div>チームうみねこ</small></div>
+              <div>チームうみねこ (代表: <a href="https://windyakin.net">神崎</a>)</div>
               <div class="small">沼津市で活動する法人格を持たない任意団体です</div>
             </dd>
           </dl>
