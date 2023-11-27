@@ -14,6 +14,7 @@ eyecatch: ./fireworks.jpg
 
 ### うみねこからの協賛者一覧 (50音順)
 
+* あーさー
 * あお
 * 나갱(えさ)
 * おま
@@ -23,4 +24,4 @@ eyecatch: ./fireworks.jpg
 * tondol
 * ぷらむ
 
-他多数
+他
