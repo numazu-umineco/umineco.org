@@ -19,6 +19,7 @@ eyecatch: ./fireworks.jpg
 * 나갱(えさ)
 * おま
 * Kanzaki
+* gr8distance
 * サイコミュおじさん
 * じゅりあん
 * tondol
