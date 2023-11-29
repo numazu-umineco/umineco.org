@@ -22,6 +22,7 @@ eyecatch: ./fireworks.jpg
 * gr8distance
 * サイコミュおじさん
 * じゅりあん
+* すみたく
 * tondol
 * ぷらむ
 
