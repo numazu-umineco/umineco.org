@@ -24,6 +24,5 @@ eyecatch: ./fireworks.jpg
 * じゅりあん
 * すみたく
 * tondol
+* passport
 * ぷらむ
-
-他
