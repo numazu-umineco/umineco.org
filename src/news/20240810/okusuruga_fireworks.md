@@ -23,3 +23,5 @@ eyecatch: ./thumbnail.jpg
 * Kazuki Nara
 * ぷらむ
 * ぺんまる
+
+![](./paper.jpg)
