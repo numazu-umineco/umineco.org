@@ -13,6 +13,9 @@
   {%- if meta.robots | length %}
   <meta name="robots" content="{{ meta.robots | join(',') }}" />
   {%- endif %}
+  {%- if redirect %}
+  <meta http-equiv="refresh" content="0;url={{ redirect }}">
+  {%- endif %}
 
   <meta property="og:title" content="{{ title or metadata.title }}" />
   <meta property="og:type" content="website" />
