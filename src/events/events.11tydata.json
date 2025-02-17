@@ -1,0 +1,7 @@
+{
+  "layout": "layouts/page.njk",
+  "tags": [
+    "events"
+  ],
+  "permalink": "{{ page.filePathStem }}.html"
+}
