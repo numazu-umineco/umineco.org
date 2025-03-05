@@ -16,6 +16,8 @@ function eleventyConfig(config) {
   const srcDir = 'src';
 
   config.addPassthroughCopy("src/img");
+  config.addPassthroughCopy("src/events/**/*.png");
+  config.addPassthroughCopy("src/events/**/*.jpg");
   config.addPassthroughCopy("src/css");
 
   config.addPlugin(EleventyHtmlBasePlugin);
