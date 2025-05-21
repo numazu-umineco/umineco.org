@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 title: うみねこのイベント情報
 eleventyComputed:
-  redirect: "{{ collections.events[0].url }}"
+  redirect: "{{ (collections.events | reverse | first).url }}"
 meta:
   robots:
     - noindex
@@ -11,4 +11,4 @@ meta:
 
 <h2>{{ title }}</h2>
 
-<a href="{{ collections.events[0].url }}">最新のイベント情報はこちら</a>
+<a href="{{ (collections.events | reverse | first).url }}">最新のイベント情報はこちら</a>
