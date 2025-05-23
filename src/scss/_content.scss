@@ -57,5 +57,13 @@
     display: flex;
     justify-content: center;
     max-width: 720px;
+    flex-direction: column;
+
+    > figcaption {
+      display: block;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
   }
 }
