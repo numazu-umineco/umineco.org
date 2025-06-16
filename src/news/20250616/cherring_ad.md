@@ -4,9 +4,9 @@ date: 2025-06-16
 eyecatch: ./sns_announcement.jpg
 ---
 
-![](./sns_announcement.jpg)
-
 AqoursのFinaleライブ開催を記念して、うみねこより沼津駅構内に応援広告を掲出します！
+
+![](./sns_announcement.jpg)
 
 - **掲出場所**：JR東海 沼津駅構内
 - **掲出期間**：2025年6月16日（月）〜22日（日）
