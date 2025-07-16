@@ -15,6 +15,7 @@ function eleventyConfig(config) {
   const distDir = '_site';
   const srcDir = 'src';
 
+  config.addPassthroughCopy("src/_redirects");
   config.addPassthroughCopy("src/img");
   config.addPassthroughCopy("src/events/**/*.png");
   config.addPassthroughCopy("src/events/**/*.jpg");

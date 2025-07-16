@@ -1,0 +1,3 @@
+/news/2025:date/:slug /news/2025/:date/:slug 301
+/news/2024:date/:slug /news/2024/:date/:slug 301
+/news/2023:date/:slug /news/2023/:date/:slug 301
