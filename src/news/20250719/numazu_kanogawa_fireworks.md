@@ -35,4 +35,5 @@ eyecatch: ./fireworks.jpg
 * にし
 * ぬまみかん
 * ぷらむ
+* もみじぃ
 * UG
