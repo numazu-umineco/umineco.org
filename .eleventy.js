@@ -15,6 +15,7 @@ function eleventyConfig(config) {
   const distDir = '_site';
   const srcDir = 'src';
 
+  config.addPassthroughCopy("src/_redirects");
   config.addPassthroughCopy("src/img");
   config.addPassthroughCopy("src/events/**/*.png");
   config.addPassthroughCopy("src/events/**/*.jpg");
@@ -78,6 +79,31 @@ function eleventyConfig(config) {
     },
   });
   config.setLibrary("md", markdownLibrary);
+
+  // 開発サーバーのリダイレクト設定
+  config.setServerOptions({
+    middleware: [
+      function(req, res, next) {
+        // リダイレクトルール
+        const redirectRules = [
+          { from: /^\/news\/2025(\d{4})\/(.+)$/, to: '/news/2025/$1/$2', status: 301 },
+          { from: /^\/news\/2024(\d{4})\/(.+)$/, to: '/news/2024/$1/$2', status: 301 },
+          { from: /^\/news\/2023(\d{4})\/(.+)$/, to: '/news/2023/$1/$2', status: 301 }
+        ];
+
+        for (const rule of redirectRules) {
+          const match = req.url.match(rule.from);
+          if (match) {
+            const redirectUrl = req.url.replace(rule.from, rule.to);
+            res.writeHead(rule.status, { Location: redirectUrl });
+            res.end();
+            return;
+          }
+        }
+        next();
+      }
+    ]
+  });
 
   return {
     dir: {
