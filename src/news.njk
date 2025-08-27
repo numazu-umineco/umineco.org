@@ -3,7 +3,7 @@ layout: layouts/base.njk
 pagination:
   data: collections.news
   size: 10
-  reverse: true
+  # reverse: true  // コレクション側で最新順にしたためテンプレート側の reverse は不要
 permalink: "/news/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}{% else %}index{% endif %}.html"
 eleventyComputed:
   title: うみねこの活動記録 ({{ pagination.pageNumber + 1 }}ページ目)

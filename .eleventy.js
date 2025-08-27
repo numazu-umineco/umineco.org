@@ -44,6 +44,20 @@ function eleventyConfig(config) {
     return DateTime.fromJSDate(dateObj, { zone: 'Asia/Tokyo' }).toFormat('yyyy年M月d日');
   });
 
+  // ニュースコレクション: 日付で降順、同日なら order フィールドで昇順
+  config.addCollection('news', function(collectionApi) {
+    return collectionApi.getFilteredByTag('news').sort(function(a, b) {
+      const aDate = a.date ? a.date.getTime() : 0;
+      const bDate = b.date ? b.date.getTime() : 0;
+      if (aDate !== bDate) {
+        return bDate - aDate; // 新しい日付を先に
+      }
+      const aOrder = (typeof a.data.order === 'number') ? a.data.order : 9999;
+      const bOrder = (typeof b.data.order === 'number') ? b.data.order : 9999;
+      return aOrder - bOrder; // order が小さいものを先に
+    });
+  });
+
   config.addNunjucksAsyncShortcode('eyecatchImageUrl', async function (src, baseUrl) {
     const { url, outputPath } = this.page;
     const itemDir = baseUrl ? path.dirname(baseUrl) : path.dirname(url);
