@@ -37,7 +37,7 @@ layout: layouts/base.njk
           活動報告
         </div>
         <div class="mx-lg-3 d-flex flex-wrap">
-          {%- for news in collections.news | reverse |  batch(1) | first %}
+          {%- for news in collections.news | batch(1) | first %}
             <div class="me-2">{{ news.data.date | dateString }}</div>
             <a href="{{ news.url }}">{{ news.data.title }}</a>
           {%- endfor %}
@@ -118,7 +118,7 @@ layout: layouts/base.njk
 
     <div class="container-fluid g-0">
       <div class="row g-0">
-        {%- for news in collections.news | reverse |  batch(6) | first %}
+  {%- for news in collections.news | batch(6) | first %}
         <div class="col-xl-4 col-lg-6 col-12 news-item">
           <a class="ratio ratio-3x2 overflow-hidden news-item-content" href="{{ news.url }}">
             <div>
