@@ -1,5 +1,5 @@
 ---
-title: うみねこが地元愛物産展2025に出展します
+title: 『沼津地元愛物産展 2025』にうみねこがNewStand+と共同で出展します
 date: 2025-10-17
 eyecatch: ./eyecatch.png
 ---
