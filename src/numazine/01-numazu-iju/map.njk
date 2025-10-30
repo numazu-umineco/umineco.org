@@ -1,10 +1,10 @@
 ---
 layout: layouts/page.njk
-title: 地元愛物産展
+title: 沼津移住者マップ(電子版)
 meta:
   robots:
     - noindex
-    - follow
+    - nofollow
 ---
 
 
@@ -12,4 +12,28 @@ meta:
   <h1>
     沼津移住者マップ(電子版)
   </h1>
+  <div>
+    沼津市への移住者が住んでいるおおまかな場所と家賃や、よく行く場所をマップにまとめました。<br>
+    画像をクリックすると拡大表示されます。<br>
+    また、下記のGoogleマップからもご覧いただけます。
+  </div>
+</div>
+
+<div class="mb-5 row">
+  <div class="col-12 col-lg-6 text-center">
+    <a href="{{ '../map1.jpg' | url }}" target="_blank" rel="noopener noreferrer" class="d-block mb-2">
+      <img src="{{ '../map1.jpg' | url }}" alt="沼津移住者マップ" class="img-fluid">
+    </a>
+  </div>
+  <div class="col-12 col-lg-6 text-center">
+    <a href="{{ '../map2.jpg' | url }}" target="_blank" rel="noopener noreferrer" class="d-block mb-2">
+      <img src="{{ '../map2.jpg' | url }}" alt="沼津移住者マップ" class="img-fluid">
+    </a>
+  </div>
+</div>
+
+<div>
+  <div class="ratio ratio-1x1">
+    <iframe src="https://www.google.com/maps/d/embed?mid=1yMXqsAevZ52pdTQYdtRAAxiE5XTql-g&ehbc=2E312F&noprof=1"></iframe>
+  </div>
 </div>
